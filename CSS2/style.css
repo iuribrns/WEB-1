@@ -1,0 +1,314 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #121212;
+    color: white;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+
+header {
+    background-color: #202020;
+    text-align: center;
+    padding: 35px 20px;
+    border-bottom: 3px solid #e63946;
+}
+
+header h1 {
+    color: rgb(230, 57, 70);
+    font-size: 40px;
+    text-shadow: 2px 2px 5px black;
+}
+
+header h2 {
+    font-size: 18px;
+    font-style: italic;
+    color: #cccccc;
+    margin-top: 8px;
+}
+
+nav {
+    margin-top: 25px;
+}
+
+nav a {
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    margin: 5px 12px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #e63946;
+}
+
+
+
+section {
+    padding: 45px 8%;
+}
+
+section h2 {
+    color: #ff4d5a;
+    margin-bottom: 20px;
+    font-size: 26px;
+}
+
+section>p {
+    color: #cccccc;
+    margin-bottom: 20px;
+}
+
+
+
+.destaque-filme {
+    background-color: #242424;
+    border: 1px solid #444;
+    border-radius: 12px;
+    padding: 25px;
+
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.destaque-filme img {
+    width: 230px;
+    border-radius: 10px;
+}
+
+.destaque-filme h3 {
+    color: #ff4d5a;
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+
+.destaque-filme p {
+    margin-bottom: 12px;
+}
+
+.destaque-filme ul {
+    list-style-type: square;
+    padding-left: 25px;
+    margin: 10px 0 20px;
+}
+
+.botao {
+    display: inline-block;
+    background-color: #e63946;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+}
+
+.botao:hover {
+    background-color: #b82935;
+}
+
+
+
+#filmes {
+    background-color: #1b1b1b;
+}
+
+.catalogo {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+}
+
+.card {
+    background-color: #292929;
+    border: 1px solid #404040;
+    border-radius: 10px;
+    overflow: hidden;
+
+    width: 240px;
+    padding-bottom: 20px;
+    text-align: center;
+
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.04);
+    border-color: #e63946;
+}
+
+.card img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    display: block;
+}
+
+.card h3 {
+    font-size: 18px;
+    color: white;
+    margin: 15px 10px 8px;
+}
+
+.card p {
+    color: #bbbbbb;
+    font-size: 14px;
+    margin: 5px 10px;
+}
+
+.card span {
+    display: inline-block;
+    color: #ffca50;
+    font-weight: bold;
+    margin-top: 12px;
+}
+
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #252525;
+}
+
+th {
+    background-color: #e63946;
+    color: white;
+}
+
+th,
+td {
+    padding: 14px;
+    text-align: left;
+    border: 1px solid #444;
+}
+
+tr:nth-child(even) {
+    background-color: #353535;
+}
+
+tr:hover {
+    background-color: #454545;
+}
+
+
+
+#generos {
+    background-color: #1b1b1b;
+}
+
+.lista-generos {
+    list-style-type: square;
+    padding-left: 25px;
+}
+
+.lista-generos li {
+    margin-bottom: 8px;
+}
+
+.lista-generos li::marker {
+    color: #e63946;
+}
+
+
+
+.sobre {
+    background-color: #252525;
+    padding: 25px;
+    border: 1px solid #444;
+    border-radius: 10px;
+    display: flow-root;
+}
+
+.logo-uneb {
+    float: right;
+    width: 100px;
+    background-color: white;
+    padding: 8px;
+    border-radius: 8px;
+    margin: 0 0 15px 20px;
+}
+
+.sobre p {
+    margin-bottom: 15px;
+}
+
+.sobre h3 {
+    color: #ff4d5a;
+    margin-top: 20px;
+}
+
+.sobre a {
+    display: inline-block;
+    color: #ff6b76;
+    text-decoration: none;
+    margin: 10px 20px 0 0;
+}
+
+.sobre a:hover,
+.sobre a:focus {
+    color: white;
+    text-decoration: underline;
+}
+
+
+
+footer {
+    background-color: #080808;
+    text-align: center;
+    padding: 25px;
+    border-top: 2px solid #e63946;
+}
+
+footer p {
+    color: #cccccc;
+    font-size: 14px;
+    margin: 5px;
+}
+
+
+
+@media (max-width: 650px) {
+    header h1 {
+        font-size: 32px;
+    }
+
+    .destaque-filme {
+        flex-direction: column;
+    }
+
+    .destaque-filme img {
+        width: 200px;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 290px;
+    }
+
+    #tabela {
+        overflow-x: auto;
+    }
+
+    table {
+        min-width: 500px;
+    }
+
+    section {
+        padding: 35px 5%;
+    }
+
+    .logo-uneb {
+        width: 75px;
+    }
+}

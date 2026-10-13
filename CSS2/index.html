@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -10,7 +11,6 @@
 
 <body>
 
-
     <header id="inicio">
         <h1>🎬 Cinema Astral</h1>
         <h2>Os melhores filmes em um só lugar!</h2>
@@ -20,26 +20,29 @@
             <a href="#destaque">Destaque</a>
             <a href="#filmes">Filmes</a>
             <a href="#tabela">Avaliações</a>
+            <a href="#favoritos">Favoritos</a>
             <a href="#sobre">Sobre</a>
         </nav>
     </header>
 
     <main>
 
-
         <section id="destaque">
-            <h2>Destaque da Semana</h2>
+            <h2 id="titulo-destaque">Destaque da Semana</h2>
 
             <div class="destaque-filme">
-                <img src="minions.jpg"
-                    alt="Minions & Monstros">
+                <img src="minions.jpg" alt="Minions & Monstros">
 
                 <div>
                     <h3>Minions & Monstros</h3>
                     <p><strong>Ano:</strong> 2026</p>
 
                     <p>
-                        Insatisfeito em ser apenas mais um membro da tribo a serviço de um chefe, James sonha em fazer filmes. Na busca por esse desejo, James sem querer liberta uma série de monstros e uma gangue de criaturas com planos de destruir o mundo. Junto dele, os outros minions têm que encontrar as horripilantes criaturas para viverem as cenas do filme de James.
+                        Insatisfeito em ser apenas mais um membro da tribo a serviço de um chefe,
+                        James sonha em fazer filmes. Na busca por esse desejo, James sem querer
+                        liberta uma série de monstros e uma gangue de criaturas com planos de
+                        destruir o mundo. Junto dele, os outros minions têm que encontrar as
+                        horripilantes criaturas para viverem as cenas do filme de James.
                     </p>
 
                     <h4>Gêneros:</h4>
@@ -49,83 +52,48 @@
                         <li>Comédia</li>
                     </ul>
 
-                    <a href="#filmes" class="botao">
-                        Ver catálogo
-                    </a>
+                    <a href="#filmes" class="botao">Ver catálogo</a>
                 </div>
             </div>
         </section>
-
 
         <section id="filmes">
-            <h2>🍿 Nosso Catálogo</h2>
+            <h2 id="titulo-catalogo">🍿 Nosso Catálogo</h2>
             <p>Escolha um filme e aproveite!</p>
 
-            <div class="catalogo">
+            <div class="controles">
+                <input type="text" id="busca" placeholder="Buscar filme...">
 
-                <div class="card">
-                    <img src="https://www.impawards.com/2026/posters/spiderman_brand_new_day.jpg"
-                        alt="Homem-Aranha: Um Novo Dia">
-                    <h3>Homem-Aranha: Um Novo Dia</h3>
-                    <p>2026 | Ação e Aventura</p>
-                    <span>Novo lançamento</span>
-                </div>
+                <select id="filtro-genero">
+                    <option value="Todos">Todos os gêneros</option>
+                    <option value="Ação">Ação</option>
+                    <option value="Terror">Terror</option>
+                    <option value="Infantil">Infantil</option>
+                    <option value="Drama">Drama</option>
+                </select>
 
-                <div class="card">
-                    <img src="https://www.impawards.com/2026/posters/obsession.jpg" alt="Obsessão">
-                    <h3>Obsessão</h3>
-                    <p>2026 | Terror e Suspense</p>
-                    <span> 7.8</span>
-                </div>
-
-                <div class="card">
-                    <img src="https://image.tmdb.org/t/p/w500/d8Ryb8AunYAuycVKDp5HpdWPKgC.jpg" alt="Sonic 3: O Filme">
-                    <h3>Sonic 3: O Filme</h3>
-                    <p>2024 | Ação e Aventura</p>
-                    <span> 7.6</span>
-                </div>
-
-                <div class="card">
-                    <img src="Mario.jpg" alt="Super Mario Galaxy: O Filme">
-                    <h3>Super Mario Galaxy: O Filme</h3>
-                    <p>2026 | Infantil e Aventura</p>
-                    <span> 6.2</span>
-                </div>
-
-                <div class="card">
-                    <img src="https://image.tmdb.org/t/p/w500/8Gxv8gSFCU0XGDykEGv7zR1n2ua.jpg" alt="Oppenheimer">
-                    <h3>Oppenheimer</h3>
-                    <p>2023 | Drama e História</p>
-                    <span> 8.6</span>
-                </div>
-
-                <div class="card">
-                    <img src="https://image.tmdb.org/t/p/w500/aPqcQwu4VGEewPhagWNncDbJ9Xp.jpg" alt="Sorria">
-                    <h3>Sorria</h3>
-                    <p>2022 | Terror e Suspense</p>
-                    <span> 6.5</span>
-                </div>
-
-                <div class="card">
-                    <img src="https://image.tmdb.org/t/p/w500/wVYREutTvI2tmxr6ujrHT704wGF.jpg" alt="Invocação do Mal">
-                    <h3>Invocação do Mal</h3>
-                    <p>2013 | Terror e Mistério</p>
-                    <span>7.5</span>
-                </div>
-
-                <div class="card">
-                    <img src="corra.jpg" alt="Poster do filme Corra!">
-                    <h3>Corra! </h3>
-                    <p>2017 | Terror e Mistério</p>
-                    <span> 7.8</span>
-                </div>
-
+                <button id="btn-inverter">Inverter ordem</button>
             </div>
+
+            <p>Filmes encontrados: <span id="contador">0</span></p>
+
+            <section id="catalogo" class="catalogo"></section>
         </section>
 
+        <section id="favoritos">
+            <h2>♥ Meus Favoritos</h2>
+
+            <p>Quantidade de favoritos:
+                <span id="contador-favoritos">0</span>
+            </p>
+
+            <ul id="lista-favoritos"></ul>
+
+            <button id="btn-limpar">Limpar favoritos</button>
+        </section>
 
         <section id="tabela">
-            <h2> Avaliações dos Filmes</h2>
+            <h2>Avaliações dos Filmes</h2>
 
             <table>
                 <thead>
@@ -183,9 +151,8 @@
             </table>
         </section>
 
-
         <section id="generos">
-            <h2> Gêneros de Filmes</h2>
+            <h2>Gêneros de Filmes</h2>
 
             <ul class="lista-generos">
                 <li>Ação</li>
@@ -198,7 +165,6 @@
             </ul>
         </section>
 
-        <!-- SOBRE -->
         <section id="sobre">
             <h2>Sobre o Projeto</h2>
 
@@ -207,18 +173,17 @@
                     alt="Logo da UNEB" class="logo-uneb">
 
                 <p>
-                    O CineMax é um catálogo de filmes criado
-                    como atividade prática disponibilizada
-                    pelo nosso Professor Perteson, ensinando
-                    conceitos de HTML e CSS.
-
-
+                    O Cinema Astral é um catálogo de filmes criado
+                    como atividade prática disponibilizada pelo
+                    nosso Professor Perteson, ensinando conceitos
+                    de HTML, CSS e JavaScript.
                 </p>
 
                 <p>
                     O objetivo é colocar em prática os conhecimentos
-                    de HTML e CSS, utilizando imagens, cores,
-                    bordas, listas, tabelas e links.
+                    de HTML, CSS e JavaScript, utilizando imagens,
+                    cores, bordas, listas, tabelas, links,
+                    arrays, funções e manipulação do DOM.
                 </p>
 
                 <h3>Contato</h3>
@@ -236,9 +201,11 @@
     </main>
 
     <footer>
-        <p>🎬 CineMax - Catálogo de Filmes</p>
+        <p>🎬 Cinema Astral - Catálogo de Filmes</p>
         <p>Atividade Prática - Desenvolvimento Web - Iuri Barroso Nascimento</p>
     </footer>
+
+    <script src="script.js"></script>
 
 </body>
 
